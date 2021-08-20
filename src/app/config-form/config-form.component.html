@@ -1,0 +1,28 @@
+<ul>
+  <li *ngFor="let prop of properties ">{{ prop.property_name }} {{ prop.property_description }} {{ prop.input_type }} {{ prop.possible_values }}</li>
+</ul>
+
+
+
+<form [formGroup]="formData" (ngSubmit)="onClickSubmit(formData.value)" >
+<mat-form-field *ngIf="listElements.length==0" appearance="fill">
+    <mat-label>{{fieldName}}</mat-label>
+  <input matInput  type= "text"  [name]="fieldName"  formControlName = "fieldValue" required />
+</mat-form-field>
+<mat-form-field  *ngIf="listElements.length>0" appearance="fill">
+  <mat-label>{{fieldName}}</mat-label>
+  <mat-select formControlName = "fieldValue"  required>
+    <mat-option *ngFor="let element of listElements" [value]="element">
+      {{element}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+  <br/>
+  <br/>
+  <button mat-button color="primary" type="submit" >Next</button>
+
+</form>
+<button mat-button color="warn" (click)="reset()">Reset</button>
+<pre>{{output}}</pre>
+
+

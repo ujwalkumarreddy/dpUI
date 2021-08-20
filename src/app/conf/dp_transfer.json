@@ -1,0 +1,12 @@
+ [
+  {"property_name":"Table Name",
+    "property_description":"Enter table name",
+   "input_type": "text",
+   "possible_values":[]
+  },
+  {"property_name":"Database Name",
+    "property_description":"select database",
+    "input_type": "list",
+    "possible_values":["dtbprima","prismaprima"]
+   }
+]
